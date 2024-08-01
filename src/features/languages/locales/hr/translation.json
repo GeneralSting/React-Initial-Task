@@ -1,0 +1,86 @@
+{
+  "metaData": {
+    "name": "Croatian",
+    "localeName": "Hrvatski",
+    "abbr": "cro",
+    "localeAbbr": "hr",
+    "localeDateCode": "hr"
+  },
+
+  "languages": {
+    "en": "Engleski",
+    "hr": "Hrvatski"
+  },
+
+  "themes": {
+    "light": "Svjetla Tema",
+    "lightIncreased": "Svjetla Tema Povećano",
+    "dark": "Tamna Tema",
+    "solarized": "Solarizirana Tema"
+  },
+
+  "header": {
+    "title": "ORQA Zadatak",
+    "titleShort": "ORQA",
+    "options": {
+      "tooltipTitle": "Izbori korisnika",
+      "title": "Promjeni izbor",
+      "themeLabel": "Teme",
+      "languageLabel": "Jezici"
+    }
+  },
+
+  "footer": {
+    "copyright": "Autorsko Pravo © ORQA",
+    "copyrightLink": "https://github.com/GeneralSting/React-Initial-Task"
+  },
+
+  "dataStatus": {
+    "noDataMsg": "Nema podataka za prikazati",
+    "errorMsg": "Nastala je pogreška",
+    "loadingMsg": "Učitavanje..."
+  },
+
+  "pages": {
+    "home": {
+      "title": "Web Developer - React Inicijalni Zadatak",
+      "author": "Pavo Skočibušić"
+    },
+    "directory": {
+      "routeName": "Imenik",
+      "table": {
+        "head": {
+          "numberDisplayed": "Prikazano",
+          "searchInputLabel": "Pretraživanje",
+          "image": "Slika",
+          "name": "Ime",
+          "lastname": "Prezime",
+          "email": "Email",
+          "position": "Pozicija",
+          "dialogDetails": "Detalji",
+          "showDetailsBtn": "Prikaži"
+        },
+        "body": {
+          "allDisplayed": "Svi zaposlenici prikazani!",
+          "errorMessage": "Poruka greške: "
+        }
+      },
+      "dialog": {
+        "title": "Detalji Zaposlenika",
+        "createdAt": "Zaposlen: ",
+        "updatedAt": "Ažurirano: ",
+        "about": "O meni:",
+        "email": "Email:",
+        "contact": "Kontakt:",
+        "address": "Adresa:"
+      }
+    },
+    "diagram": {
+      "routeName": "Dijagram"
+    },
+    "pageNotFound": {
+      "title": "Stranica ne postoji!",
+      "returnBtn": "Povratak"
+    }
+  }
+}

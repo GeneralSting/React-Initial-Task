@@ -1,0 +1,86 @@
+{
+  "metaData": {
+    "name": "English",
+    "localeName": "English",
+    "abbr": "en",
+    "localeAbbr": "en",
+    "localeDateCode": "en-GB"
+  },
+
+  "languages": {
+    "en": "English",
+    "hr": "Croatian"
+  },
+
+  "themes": {
+    "light": "Light Theme",
+    "lightIncreased": "Light Theme Large",
+    "dark": "Dark Theme",
+    "solarized": "Solarized Theme"
+  },
+
+  "header": {
+    "title": "ORQA Task",
+    "titleShort": "ORQA",
+    "options": {
+      "tooltipTitle": "User preferences",
+      "title": "Change preferences",
+      "themeLabel": "Theme",
+      "languageLabel": "Language"
+    }
+  },
+
+  "footer": {
+    "copyright": "Copyright © ORQA",
+    "copyrightLink": "https://github.com/GeneralSting/React-Initial-Task"
+  },
+
+  "dataStatus": {
+    "noDataMsg": "No data to show",
+    "errorMsg": "Error occured",
+    "loadingMsg": "Loading..."
+  },
+
+  "pages": {
+    "home": {
+      "title": "Web Developer - React Initial Task",
+      "author": "Pavo Skočibušić"
+    },
+    "directory": {
+      "routeName": "Directory",
+      "table": {
+        "head": {
+          "numberDisplayed": "Displayed",
+          "searchInputLabel": "Search",
+          "image": "Image",
+          "name": "Name",
+          "lastname": "Last Name",
+          "email": "Email",
+          "position": "Position",
+          "dialogDetails": "Details",
+          "showDetailsBtn": "Show"
+        },
+        "body": {
+          "allDisplayed": "All employees displayed!",
+          "errorMessage": "Error message: "
+        }
+      },
+      "dialog": {
+        "title": "Employee Details",
+        "createdAt": "Joined: ",
+        "updatedAt": "Updated: ",
+        "about": "About:",
+        "email": "Email:",
+        "contact": "Contact:",
+        "address": "Address:"
+      }
+    },
+    "diagram": {
+      "routeName": "Diagram"
+    },
+    "pageNotFound": {
+      "title": "Page Not Found!",
+      "returnBtn": "Return Home"
+    }
+  }
+}
