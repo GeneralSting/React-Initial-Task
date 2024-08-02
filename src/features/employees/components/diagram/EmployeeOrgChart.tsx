@@ -2,8 +2,9 @@ import { TreeNode } from "primereact/treenode";
 import { Employee } from "../../types/api/employee";
 import buildHierarchy from "../../utils/buildHierarchy";
 import { useMemo } from "react";
-import { Paper } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { OrganizationChart } from "primereact/organizationchart";
+import { useTranslation } from "react-i18next";
 
 const EmployeeOrgChart = ({
   employeesData,
@@ -12,6 +13,8 @@ const EmployeeOrgChart = ({
   employeesData: Employee[];
   handleDialogOpen: (employee: Employee) => void;
 }) => {
+  const { t } = useTranslation();
+
   const hierarchicalData = useMemo(
     () => buildHierarchy(employeesData),
     [employeesData]
@@ -45,11 +48,13 @@ const EmployeeOrgChart = ({
         width: "90vw",
       }}
     >
-      {hierarchicalData && hierarchicalData.length > 0 && (
+      {employeesData && employeesData.length > 0 ? (
         <OrganizationChart
           value={hierarchicalData}
           nodeTemplate={nodeTemplate}
         />
+      ) : (
+        <Typography textAlign="center">{t("dataStatus.noDataMsg")}</Typography>
       )}
     </Paper>
   );

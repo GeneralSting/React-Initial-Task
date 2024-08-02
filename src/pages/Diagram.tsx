@@ -5,23 +5,19 @@ import "primereact/resources/themes/saga-blue/theme.css"; // Choose the theme yo
 import { Employee } from "../features/employees/types/api/employee";
 import EmployeeOrgChart from "../features/employees/components/diagram/EmployeeOrgChart";
 import { LoadingMsg } from "../components";
+import { useTranslation } from "react-i18next";
+import { Typography } from "@mui/material";
 
 const Diagram: React.FC = () => {
-  const { employeesData, employeesNumber, refetch } = useEmployees();
+  const { t } = useTranslation();
+  const { employeesData, refetch, hasMoreData } = useEmployees();
 
   const loadingStatus = useAppSelector((state) => state.employees.status);
-  const nextPage = useAppSelector(
-    (state) => state.employees.meta.next_page_url
-  );
+  const apiError = useAppSelector((state) => state.employees.error);
+  const totalEmployees = useAppSelector((state) => state.employees.meta.total);
 
   const [open, setOpen] = useState<boolean>(false);
   const [employeeDetails, setEmployeeDetails] = useState<Employee | null>(null);
-
-  useEffect(() => {
-    if (loadingStatus === "success" && nextPage !== null) {
-      refetch();
-    }
-  }, [loadingStatus, nextPage, refetch]);
 
   const handleDialogOpen = (employee: Employee) => {
     setEmployeeDetails(employee);
@@ -33,24 +29,40 @@ const Diagram: React.FC = () => {
     setEmployeeDetails(null);
   };
 
+  useEffect(() => {
+    if (loadingStatus === "success") {
+      refetch();
+    }
+  }, [loadingStatus, refetch]);
+
   return (
     <>
-      {employeesData.length === employeesNumber ? (
-        <div className="chart-container">
-          <EmployeeOrgChart
-            employeesData={employeesData}
-            handleDialogOpen={handleDialogOpen}
-          />
-        </div>
+      {loadingStatus === "fail" ? (
+        <Typography>
+          {apiError
+            ? t("pages.directory.table.body.errorMessage") + apiError
+            : t("dataStatus.errorMsg")}
+        </Typography>
       ) : (
-        <LoadingMsg />
-      )}
-      {employeeDetails && (
-        <EmployeeDetailsDialog
-          open={open}
-          employee={employeeDetails}
-          closeDialog={handleDialogClose}
-        />
+        <>
+          {employeesData.length === totalEmployees && !hasMoreData ? (
+            <div className="chart-container">
+              <EmployeeOrgChart
+                employeesData={employeesData}
+                handleDialogOpen={handleDialogOpen}
+              />
+            </div>
+          ) : (
+            <LoadingMsg />
+          )}
+          {employeeDetails && (
+            <EmployeeDetailsDialog
+              open={open}
+              employee={employeeDetails}
+              closeDialog={handleDialogClose}
+            />
+          )}
+        </>
       )}
     </>
   );

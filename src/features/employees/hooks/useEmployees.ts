@@ -70,7 +70,6 @@ const useEmployees = (): UseEmployeesResult => {
           })
         );
       }
-      setHasMoreData(true);
     }
   }, [dispatch, nextPageUrl, searchQuery]);
 
